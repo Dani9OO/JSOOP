@@ -1,12 +1,13 @@
-// Constructor Function
+// Functions are objects
 
 function Circle(radius) {
     this.radius = radius;
     this.draw = function() {
         console.log('draw');
     }
-    // We don't need to return this instance, the 'new' operator is going to handle that
 }
 
 const circle = new Circle(1);
-circle.draw();
+
+Circle.call({}, 1);
+Circle.apply({}, [1, 2, 3]);
